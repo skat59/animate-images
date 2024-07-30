@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let text = document.querySelector('#progress-text');
     // Определяем canvas
     let element = document.getElementById('canvas1');
-    let imagesArray = Array.from(new Array(90), (v, k) => {
+    let imagesArray = Array.from(new Array(358), (v, k) => {
         let number = String(k).padStart(4, "0");
-        return `https://distracted-villani-e19534.netlify.app/train/rotation${number}.jpg`;
+        return `images/${number}.jpg`;
     });
     let loadingBlock = document.querySelector('.loading1');
 
@@ -17,20 +17,20 @@ document.addEventListener("DOMContentLoaded", function() {
     let instance1 = new AnimateImages(element, {
         images: imagesArray,
         preload: "all",
-        preloadNumber: 15,
+        preloadNumber: 357,
         poster: imagesArray[0],
-        fps: 45,
+        fps: 60,
         loop: true,
         //reverse: true,
         autoplay: false,
-        //ratio: 2.56,
+        ratio: 1,
         fillMode: 'cover',
         draggable: true,
         //inversion: true,
         //dragModifier: 1.5,
         touchScrollMode: "pageScrollTimer",
         //pageScrollTimerDelay: 2500,
-        //responsiveAspect: "height",
+        responsiveAspect: "height",
         // fastPreview: {
         //     images: imagesArray.filter( (val, i) => i % 5 === 0 ),
         //     matchFrame: function (currentFrame){
@@ -172,9 +172,9 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.js-set-fps').addEventListener('click', function() {
             instance1.setOption("fps", this.closest('.js-option-block').querySelector('input').value);
         });
-        document.querySelector('.js-set-ratio').addEventListener('click', function() {
-            instance1.setOption("ratio", this.closest('.js-option-block').querySelector('input').value);
-        });
+        //document.querySelector('.js-set-ratio').addEventListener('click', function() {
+        //    instance1.setOption("ratio", this.closest('.js-option-block').querySelector('input').value);
+        //});
     }
 
 });
