@@ -28,6 +28,16 @@
             opacity: 1;
             transform: all .3s ease;
         }
+        .buttons {
+            visibility: visible;
+            transform: all .3s ease;
+            opacity: 1;
+        }
+        .load .buttons {
+            visibility: hidden;
+            transform: all .3s ease;
+            opacity: 0;
+        }
         .progress-wrapper {
             display: flex;
             flex-wrap: nowrap;
@@ -54,21 +64,6 @@
             width: 100%; /* this is important! */
             max-width: 800px;
             /*height: 350px;*/
-        }
-        .loading{
-            position: absolute;
-            z-index: 5;
-            right: 0;
-            top: 0;
-            background-color: rgba(255, 255, 255, 0.7);
-            max-width: 280px;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 5px 15px;
-        }
-        .loading span{
-            font-weight: bold;
         }
         .form-check-inline{
             margin-right: 8px;
@@ -120,7 +115,7 @@
     </style>
 
 </head>
-<body>
+<body class="load">
 
 
 
@@ -138,7 +133,7 @@
                         <progress id="progress" max="1"></progress>&nbsp;<span id="progress-text">0%</span>
                     </div>
                 </div>
-                <div class="col-12 col-sm-auto">
+                <div class="col-12 col-sm-auto buttons">
                     <div class="btn-toolbar justify-content-center">
                         <div class="btn-group mb-2  justify-content-center" role="group">
                             <button type="button" class="btn btn-success js-play">Play</button>
@@ -150,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-auto mb-2 mb-md-0">
+                <div class="col-12 col-sm-auto mb-2 mb-md-0 buttons">
                     <div class="btn-group btn-group-sm me-2" role="group">
                         <input type="radio" class="btn-check js-fill-mode js-cover" name="options-outlined" value="cover"
                                id="fill-cover" autocomplete="off">
@@ -173,7 +168,7 @@
                         <label class="form-check-label" for="draggable-checkbox">Draggable</label>
                     </div>
                 </div>
-                <div class="col-12 col-12 col-lg-6 col-xl-3">
+                <div class="col-12 col-12 col-lg-6 col-xl-3 buttons">
                     <div class="form-group">
                         <label for="formControlRange" class="d-none d-md-block">Frames</label>
                         <input class="form-range js-frames-input" id="formControlRange" max="100" min="1" type="range"
@@ -181,7 +176,7 @@
                     </div>
                 </div>
             </div><!--/.row-->
-            <div class="row justify-content-center">
+            <div class="row justify-content-center buttons">
                 <div class="col-auto js-option-block">
                     <div class="input-group mb-2 mx-auto" >
                         <input type="text" class="form-control small-input" placeholder="10" value="10">
