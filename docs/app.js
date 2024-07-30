@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
     element.addEventListener('animate-images:loading-progress', function (e){
         //console.log(`Event: loading progress: ${e.detail.progress}`);
         //loadingBlock.querySelector('span').textContent = Math.floor( +e.detail.progress * 100);
-        progress.value = e.detail.progress;
+        progress.value = +e.detail.progress;
         text.textContent = Math.floor( +e.detail.progress * 100) + `%`;
 
     });
