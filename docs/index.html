@@ -9,6 +9,39 @@
     <title>Animation test</title>
 
     <style>
+        ::-webkit-progress-bar {
+            background: white;
+        }
+        ::-webkit-progress-value {
+            background: #0dcaf0;
+        }
+        ::-moz-progress-bar {
+            background: #0dcaf0;
+        }
+        .progress {
+            display: block;
+            opacity: 0;
+            transform: all .3s ease;
+        }
+        .load .progress {
+            display: block;
+            opacity: 1;
+            transform: all .3s ease;
+        }
+        .progress-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        #progress {
+            flex: 1 0 auto;
+        }
+        #progress-text {
+            width: 100px;
+            min-width: 100px;
+            max-width: 100px;
+            display: inline-block;
+            flex: 0 0 auto;
+        }
         .canvas1-block{
             max-width: 800px; /* this is to align loading block */
             margin-left:  auto;
@@ -100,6 +133,11 @@
     <div class="text-center">
         <div class="block">
             <div class="row justify-content-center">
+                <div class="progress col-12 text-center">
+                    <div class="progress-wrapper">
+                        <progress id="progress" max="1"></progress>&nbsp;<span id="progress-text">0%</span>
+                    </div>
+                </div>
                 <div class="col-12 col-sm-auto">
                     <div class="btn-toolbar justify-content-center">
                         <div class="btn-group mb-2  justify-content-center" role="group">

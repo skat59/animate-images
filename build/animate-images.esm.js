@@ -2,7 +2,12 @@
  @its2easy/animate-images 2.3.1
  https://github.com/skat59/animate-images
          
- Copyright (c) 2020-present Dmitry Kovalev,
+ Copyright (c) 2020-present Dmitry Kovalev
+
+ Author Dmitry Kovalev
+
+ Author ProjectSoft
+
  Released under the MIT license
 */
 function _defineProperty(obj, key, value) {

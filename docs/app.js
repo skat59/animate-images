@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('body').classList.add('load');
     // Определяем range
     let framesInput = document.querySelector('.js-frames-input');
     // Определяем родителя прогрессбар
-    let parentProgress = document.querySelector('.js-frames-parent-progress');
+    let progress = document.querySelector('#progress');
+    let text = document.querySelector('#progress-text');
     // Определяем canvas
     let element = document.getElementById('canvas1');
     let imagesArray = Array.from(new Array(90), (v, k) => {
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // },
         onPreloadFinished: (plugin) => {
             console.log('Callback: onPreloadFinished');
+            document.querySelector('body').classList.remove('load');
             //plugin.play();
         },
         onFastPreloadFinished: (plugin) => {
@@ -62,32 +65,35 @@ document.addEventListener("DOMContentLoaded", function() {
     // Events
     element.addEventListener('animate-images:loading-progress', function (e){
         //console.log(`Event: loading progress: ${e.detail.progress}`);
-        loadingBlock.querySelector('span').textContent = Math.floor( +e.detail.progress * 100);
+        //loadingBlock.querySelector('span').textContent = Math.floor( +e.detail.progress * 100);
+        progress.value = e.detail.progress;
+        text.textContent = Math.floor( +e.detail.progress * 100) + `%`;
+
     });
     element.addEventListener('animate-images:preload-finished', function (e){
-        console.log(`Event: animate-images:preload-finished`);
+        //console.log(`Event: animate-images:preload-finished`);
     });
     element.addEventListener('animate-images:fast-preload-finished', function (e){
-        console.log(`Event: animate-images:fast-preload-finished`);
+        //console.log(`Event: animate-images:fast-preload-finished`);
     });
     element.addEventListener('animate-images:animation-end', function () {
-        console.log(`Event: animate-images:animation-end`);
+        //console.log(`Event: animate-images:animation-end`);
     });
     element.addEventListener('animate-images:poster-loaded', function () {
-        console.log(`Event: animate-images:poster-loaded`);
+        //console.log(`Event: animate-images:poster-loaded`);
     });
     element.addEventListener('animate-images:loading-error', function () {
-        console.log(`Event: animate-images:loading-error`);
+        //console.log(`Event: animate-images:loading-error`);
     });
     element.addEventListener('animate-images:drag-start', function () {
-        console.log(`Event: animate-images:drag-start`);
+        //console.log(`Event: animate-images:drag-start`);
     });
     element.addEventListener('animate-images:drag-change', function (e) {
         //console.log(`Event: animate-images:drag-change`);
         //console.log(`Drag direction: ${e.detail.direction}`);
     });
     element.addEventListener('animate-images:drag-end', function (e) {
-        console.log(`Event: animate-images:drag-end`);
+        //console.log(`Event: animate-images:drag-end`);
         //console.log(`Drag direction: ${e.detail.direction}`);
     });
 
