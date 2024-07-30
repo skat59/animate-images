@@ -1,0 +1,12 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "corejs": 3.24,
+        "useBuiltIns": "usage",
+        "exclude": ["es.promise", "es.error.cause"]
+      }
+    ]
+  ]
+}
