@@ -16,8 +16,6 @@ yarn-error.log*
 Thumbs.db
 ehthumbs.db
 *.lnk
-/example/images/**/*.jpg
-/example/images/**/*.png
-/example/animate-images*.js
-/example/animate-images*.map
+/example
 /types
+*-lock.json
